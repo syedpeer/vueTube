@@ -1,3 +1,3 @@
 ### vueTube
 
-A youtube clone build with vue js
+A youtube clone build with Vue JS
