@@ -5,9 +5,11 @@
 </template>
 
 <script>
+import axios from 'axios';
 import SearchBar from './components/SearchBar';
 import config from './config/config';
-// const API_KEY = '';
+
+const API_KEY = config.API_KEY;
 
 export default {
     name: 'App',
@@ -16,7 +18,14 @@ export default {
     },
     methods: {
         newSearch(searchTerm) {
-            console.log(config.API_KEY)
+          axios.get('https://www.googleapis.com/youtube/v3/search', {
+              params: {
+                  key: API_KEY,
+                  type: 'video',
+                  part: 'snippet',
+                  q: searchTerm
+              }
+          }).then(res => console.log(res));
         }
     }
 };
