@@ -1,6 +1,6 @@
 <template>
     <div>
-        <SearchBar></SearchBar>
+        <SearchBar @newSearch="newSearch"></SearchBar>
     </div>
 </template>
 
@@ -11,6 +11,11 @@ export default {
     name: 'App',
     components: {
         SearchBar
+    },
+    methods: {
+        newSearch(searchTerm) {
+            console.log(searchTerm);
+        }
     }
 };
 </script>
