@@ -2,6 +2,7 @@
     <div>
         <SearchBar @newSearch="newSearch"></SearchBar>
         <VideoList></VideoList>
+        {{ videos.length }}
     </div>
 </template>
 
@@ -19,6 +20,9 @@ export default {
         SearchBar,
         VideoList
     },
+    data() {
+        return { videos: [] };
+    },
     methods: {
         newSearch(searchTerm) {
           axios.get('https://www.googleapis.com/youtube/v3/search', {
@@ -28,7 +32,9 @@ export default {
                   part: 'snippet',
                   q: searchTerm
               }
-          }).then(res => console.log(res));
+          }).then(res => {
+              this.videos = res.data.items;
+          });
         }
     }
 };
