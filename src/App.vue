@@ -1,12 +1,14 @@
 <template>
     <div>
         <SearchBar @newSearch="newSearch"></SearchBar>
+        <VideoList></VideoList>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
 import SearchBar from './components/SearchBar';
+import VideoList from './components/videoList';
 import config from './config/config';
 
 const API_KEY = config.API_KEY;
@@ -14,7 +16,8 @@ const API_KEY = config.API_KEY;
 export default {
     name: 'App',
     components: {
-        SearchBar
+        SearchBar,
+        VideoList
     },
     methods: {
         newSearch(searchTerm) {
