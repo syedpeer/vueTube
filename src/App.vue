@@ -1,8 +1,11 @@
 <template>
     <div>
-        <SearchBar @newSearch="newSearch"></SearchBar>
-        <VideoList></VideoList>
-        {{ videos.length }}
+        <!-- 
+            @ = v-on:
+            : = v-bind:
+         -->
+        <SearchBar @newSearch="newSearch"></SearchBar> 
+        <VideoList :videos="videos"></VideoList>
     </div>
 </template>
 
