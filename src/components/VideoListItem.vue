@@ -10,9 +10,7 @@
 <script>
 export default {
     name: 'VideoListItem',
-    props: {
-        video: Object
-    },
+    props: ['video'],
     computed: {
         thumbnailUrl() {
            return this.video.snippet.thumbnails.default.url;

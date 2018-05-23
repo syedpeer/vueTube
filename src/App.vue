@@ -6,7 +6,7 @@
          -->
         <SearchBar @newSearch="newSearch"></SearchBar> 
         <VideoDetail
-            :video="video"
+            :video="selectedVideo"
             >
         </VideoDetail>
         <VideoList 
@@ -36,7 +36,10 @@ export default {
         VideoDetail
     },
     data() {
-        return { videos: [], video: {}};
+        return { 
+            videos: [], 
+            selectedVideo: null
+        };
     },
     methods: {
         newSearch(searchTerm) {
@@ -52,7 +55,7 @@ export default {
           });
         },
         onVideoSelect(video) {
-           this.video = video
+           this.selectedVideo = video
         }
     }
 };
