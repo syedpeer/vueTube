@@ -1,7 +1,9 @@
 <template>
-    <li class="list-group-item">
-        <img :src="thumbnailUrl" />
-        {{video.snippet.title}}
+    <li class="item media mb-3">
+        <img class="mr-3" :src="thumbnailUrl" />
+        <div class="media-body">
+            {{video.snippet.title}}
+        </div>
     </li>
 </template>
 
@@ -19,7 +21,12 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+    .item {
+        cursor: pointer;
+    }
+    .item:hover {
+        background-color: #eee;
+    }
 </style>
 
