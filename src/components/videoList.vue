@@ -1,5 +1,5 @@
 <template>
-    <ul class="list-unstyled">
+    <ul class="list-unstyled col-md-4 col-xs-12">
       <videoListItem 
         v-for="video in videos" 
         :key="video.etag"
