@@ -1,7 +1,8 @@
 <template>
     <ul>
       <videoListItem 
-        v-for="video in videos" :key="video.snippet.id"
+        v-for="video in videos" 
+        :key="video.etag"
         :video="video"
         >
         </videoListItem>
