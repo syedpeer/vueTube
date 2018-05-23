@@ -1,8 +1,12 @@
 <template>
-    <div>
-        <input type="text" @input="onSearch">
+    <div class="input-group search">
+        <input class="form-control input" placeholder="Search for videos" type="text" @input="onSearch">
     </div>
 </template>
+
+
+
+
 
 <script>
 export default {
@@ -15,5 +19,13 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+    .search {
+        margin: 2rem 0;
+        text-align: center;
+    }
+
+    .input {
+        width: 75%;
+    }
 </style>
