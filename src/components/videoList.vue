@@ -1,6 +1,10 @@
 <template>
     <ul>
-      <videoListItem v-for="video in videos"></videoListItem>
+      <videoListItem 
+        v-for="video in videos" :key="video.snippet.id"
+        :video="video"
+        >
+        </videoListItem>
     </ul>
 </template>
 
