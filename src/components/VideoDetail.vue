@@ -9,7 +9,7 @@
                 <p>{{ video.snippet.description }}</p>
             </div>
         </div>
-        <div v-if="!video">
+        <div v-else>
             <p>no videos found ...</p>
         </div>
     </div>
