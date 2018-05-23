@@ -5,14 +5,25 @@
             : = v-bind:
          -->
         <SearchBar @newSearch="newSearch"></SearchBar> 
-        <VideoList :videos="videos"></VideoList>
+        <VideoDetail
+            :video="video"
+            >
+        </VideoDetail>
+        <VideoList 
+            :videos="videos"
+            @videoSelect="onVideoSelect"
+            >
+        </VideoList>
     </div>
 </template>
 
 <script>
-import axios from 'axios';
+// Components
 import SearchBar from './components/SearchBar';
-import VideoList from './components/videoList';
+import VideoList from './components/VideoList';
+import VideoDetail from './components/VideoDetail';
+//Other
+import axios from 'axios';
 import config from './config/config';
 
 const API_KEY = config.API_KEY;
@@ -21,10 +32,11 @@ export default {
     name: 'App',
     components: {
         SearchBar,
-        VideoList
+        VideoList,
+        VideoDetail
     },
     data() {
-        return { videos: [] };
+        return { videos: [], video: {}};
     },
     methods: {
         newSearch(searchTerm) {
@@ -38,6 +50,9 @@ export default {
           }).then(res => {
               this.videos = res.data.items;
           });
+        },
+        onVideoSelect(video) {
+           this.video = video
         }
     }
 };
